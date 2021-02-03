@@ -1,0 +1,438 @@
+$primary-color: #e50914;
+$text-color: #ffffff;
+$bg-dark: #000;
+$dark-border: #222;
+$link-color: #757575;
+
+@mixin btn {
+    background-color: $primary-color;
+    color: $text-color;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 15px;
+    outline: none;
+
+    @media only screen and (max-width: 570px) {
+        padding: 5px 10px;
+    }
+}
+
+@mixin darkBorder {
+    border-bottom: 8px solid $dark-border;
+}
+
+@mixin flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $dark-border;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: $text-color;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+
+#hero-section {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+        url(../images/background-image.jpg);
+    background-size: cover;
+    @include darkBorder();
+
+    .container {
+        padding: 0 1rem;
+
+        header {
+            @include flex-container();
+            padding: 5px 0;
+
+            .logo-section {
+                img {
+                    width: 150px;
+                }
+            }
+
+            .sign-in {
+                button {
+                    @include btn;
+                }
+            }
+        }
+
+        .hero {
+            height: 600px;
+            @include flex-container();
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+
+            .titles {
+                h4 {
+                    margin: .7rem 0 1rem 0;
+                }
+            }
+
+            .email-input {
+                p {
+                    font-size: 1.2rem;
+                }
+
+                .input-group {
+                    margin-top: 15px;
+                    display: flex;
+                    justify-content: center;
+
+                    input {
+                        width: 65%;
+                        border-radius: 0;
+                        padding: 12px 15px;
+                        outline: none;
+                        font-size: 1rem;
+                        border: 3px solid #fff;
+                    }
+
+                    button {
+                        @include btn;
+                        border-radius: 0;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        font-weight: 400;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#tv-section {
+    background: $bg-dark;
+    padding: 3rem 0;
+    @include darkBorder();
+
+    .container {
+        @include flex-container();
+
+        .tv-section-title {
+            flex: 1;
+        }
+
+        .tv-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                max-width: 80%;
+                z-index: 111;
+            }
+
+            video {
+                position: absolute;
+                max-width: 70%;
+                left: 31%;
+                top: 20%;
+            }
+        }
+    }
+}
+
+
+#mobile-section {
+    background: $bg-dark;
+    padding: 3rem 0;
+    @include darkBorder();
+
+    .container {
+        @include flex-container();
+
+        .mobile-image {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+
+            img {
+                max-width: 80%;
+            }
+        }
+
+        .mobile-section-title {
+            flex: 1;
+        }
+    }
+}
+
+
+#device-section {
+    background: $bg-dark;
+    padding: 3rem 0;
+    @include darkBorder();
+
+    .container {
+        @include flex-container();
+
+        .device-title {
+            flex: 1;
+        }
+
+        .device-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                max-width: 80%;
+                z-index: 111;
+            }
+
+            video {
+                position: absolute;
+                max-width: 50%;
+                left: 35%;
+                top: 10%;
+            }
+        }
+    }
+}
+
+
+#faq-section {
+    background: $bg-dark;
+    padding: 3rem 0;
+    @include darkBorder();
+
+    .container {
+        h1 {
+            text-align: center;
+        }
+
+        .questions-section {
+            margin: 3rem 0;
+
+            .question {
+                max-width: 700px;
+                margin: 7px auto;
+
+                .collapsible {
+                    background-color: #303030;
+                    color: #fff;
+                    cursor: pointer;
+                    padding: 17px 25px;
+                    width: 100%;
+                    border: none;
+                    text-align: left;
+                    outline: none;
+                    font-size: 1.2rem;
+                }
+
+                .content {
+                    padding: 17px 25px;
+                    display: none;
+                    overflow: hidden;
+                    background-color: #303030;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .email-input {
+            text-align: center;
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .input-group {
+                margin-top: 15px;
+                display: flex;
+                justify-content: center;
+
+                input {
+                    width: 55%;
+                    border-radius: 0;
+                    padding: 12px 15px;
+                    outline: none;
+                    font-size: 1rem;
+                    border: 3px solid #fff;
+                }
+
+                button {
+                    @include btn;
+                    border-radius: 0;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-weight: 400;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+    }
+}
+
+
+footer {
+    background-color: $bg-dark;
+    padding: 3rem 0;
+    color: $link-color;
+
+    .container {
+        .footer-title {
+            margin-bottom: 2rem;
+        }
+
+        .footer-menu {
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                display: flex;
+                flex-direction: column;
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                    margin: 10px 0;
+                }
+            }
+        }
+
+        .netflix-bd {
+            margin-top: 2rem;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 950px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        max-width: 850px;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    html {
+        font-size: 13px;
+    }
+
+    .container {
+        max-width: 700px;
+    }
+
+    #hero-section {
+        header {
+            .logo-section img {
+                width: 130px;
+            }
+        }
+    }
+
+    #tv-section,
+    #mobile-section,
+    #device-section {
+        padding: 5rem 0;
+
+        .container {
+            flex-direction: column;
+            text-align: center;
+
+            .tv-image,
+            .mobile-image,
+            .device-image {
+                justify-content: center;
+            }
+
+            .tv-image video {
+                position: absolute;
+                max-width: 59%;
+                left: 21%;
+                top: 20%;
+            }
+
+            .device-image video {
+                position: absolute;
+                max-width: 50%;
+                left: 25%;
+                top: 10%;
+            }
+
+            .mobile-image {
+                margin-bottom: 3rem;
+            }
+
+            .device-image {
+                margin-top: 3rem;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 570px) {
+    html {
+        font-size: 11px;
+    }
+
+    .container {
+        max-width: 500px;
+    }
+
+    footer {
+        .footer-menu {
+            flex-direction: column;
+
+            div {
+                border-bottom: 2px solid $dark-border;
+            }
+        }
+    }
+}
